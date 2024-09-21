@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,6 +18,29 @@ return new class extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+        DB::table('priorities')->insert(
+            [
+                [
+                    'name' => 'high',
+                    'description' => 'high Priority',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'name' => 'skjf',
+                    'description' => 'high Priority',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'name' => 'ajksf',
+                    'description' => 'high Priority',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+            ]
+    );
     }
 
     /**
